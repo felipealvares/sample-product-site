@@ -13,7 +13,7 @@ require('./database');
 var index = require('./routes/web/index');
 
 // routes admin
-//var login_admin = require('./routes/admin/login');
+var login_admin = require('./routes/admin/login');
 var index_admin = require('./routes/admin/index');
 var product_admin = require('./routes/admin/products');
 
@@ -38,6 +38,7 @@ app.use('/', index);
 
 // admin
 app.use('/admin/', index_admin);
+app.use('/admin/login', index_admin);
 app.use('/admin/products', product_admin);
 
 // catch 404 and forward to error handler
@@ -65,7 +66,7 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
 	res.status(err.status || 500);
-	
+
 	res.render('error', {
 		message: err.message,
 		error: {}

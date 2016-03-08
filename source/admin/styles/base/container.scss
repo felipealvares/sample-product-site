@@ -1,0 +1,23 @@
+﻿// ==========================================================================
+// Container
+// ==========================================================================
+
+.container {
+	position: relative;
+	margin: 0 auto;
+	width: 1000px;
+	padding: 0 12px;
+	box-sizing: border-box;
+
+	&.login {
+		margin: 5% auto;
+		position: relative;
+		width: 420px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.container {
+		width: 100%;
+	}
+}

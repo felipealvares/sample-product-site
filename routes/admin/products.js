@@ -16,7 +16,7 @@ router.get('/', function(req, res) {
 
 router.post('/save', function(req, res) {
 	var product = {
-		name : req.body.name, 
+		name : req.body.name,
 		title: req.body.title,
 		category: req.body.category,
 		price: req.body.price,

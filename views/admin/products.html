@@ -1,49 +1,50 @@
-{% extends 'layout.html' %}
+{% extends 'default/layout-admin.html' %}
 
 {% block title %}{% endblock %}
 
-
 {% block content %}
 
-  <div class="container">
+	{% include 'default/header-admin.html' %}
 
-	<h1>{{ title }}</h1>
+	<div class="container" hidden>
 
-	<br>
+		<h1>{{ title }}</h1>
 
-	<form method="post" action="/admin/products/save" class="form-inline">
-		<div class="form-group">
-			<label>Name</label>
-			<input type="text" name="name" class="form-control" required>
+		<br>
 
-			<label>Title</label>
-			<input type="text" name="title" class="form-control" required>
+		<form method="post" action="/admin/products/save" class="form-inline">
+			<div class="form-group">
+				<label>Name</label>
+				<input type="text" name="name" class="form-control" required>
 
-			<label>Category</label>
-			<input type="text" name="category" class="form-control" required>
+				<label>Title</label>
+				<input type="text" name="title" class="form-control" required>
 
-			<label>Price</label>
-			<input type="text" name="price" class="form-control" required>
+				<label>Category</label>
+				<input type="text" name="category" class="form-control" required>
 
-			<label>Price Discount</label>
-			<input type="text" name="price_discount" class="form-control" required>
+				<label>Price</label>
+				<input type="text" name="price" class="form-control" required>
 
-			<label>Description Short</label>
-			<input type="text" name="description_short" class="form-control" required>
+				<label>Price Discount</label>
+				<input type="text" name="price_discount" class="form-control" required>
 
-			<label>Description Full</label>
-			<input type="text" name="description_full" class="form-control" required>
-		</div>
-		<button type="submit" class="btn btn-default">Save</button>
-	</form>
+				<label>Description Short</label>
+				<input type="text" name="description_short" class="form-control" required>
 
-	<hr><br>
+				<label>Description Full</label>
+				<input type="text" name="description_full" class="form-control" required>
+			</div>
+			<button type="submit" class="btn btn-default">Save</button>
+		</form>
 
-	<h2>All products</h2>
+		<hr><br>
 
-	<div>
+		<h2>All products</h2>
+
+		<ul>
 		{% for product in products %}
-		<p>
+			<li>
 			{{product.name}}
 			{{product.title}}
 			{{product.category}}
@@ -51,12 +52,10 @@
 			{{product.price_discount}}
 			{{product.description_short}}
 			{{product.description_full}}
-		</p>
-
-		<br/>
+			</li>
 		{% endfor %}
-	</ul>
+		</ul>
+	</div>
 
-  </div>
-
+	{% include 'default/footer-admin.html' %}
 {% endblock %}
