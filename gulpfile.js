@@ -501,16 +501,16 @@ gulp.task('watch', ['browserSync'], function () {
 
 	//ADMIN
 	//Images watch
-	gulp.watch([CONFIG.PATH_ADMIN.IMAGES.ROOT + '**/*', '!' + CONFIG.PATH_ADMIN.IMAGES.SPRITE + '**/*'], ['images-minify']);
+	gulp.watch([CONFIG.PATH_ADMIN.IMAGES.ROOT + '**/*', '!' + CONFIG.PATH_ADMIN.IMAGES.SPRITE + '**/*'], ['images-minify-admin']);
 
 	//Styles watch
-	gulp.watch([CONFIG.PATH_ADMIN.STYLES.SCSS + '**/*.scss', '!' + CONFIG.PATH_ADMIN.STYLES.SCSS + 'sprite.scss'], ['styles']).on('change', reportChange);
+	gulp.watch([CONFIG.PATH_ADMIN.STYLES.SCSS + '**/*.scss', '!' + CONFIG.PATH_ADMIN.STYLES.SCSS + 'sprite.scss'], ['styles-admin']).on('change', reportChange);
 
 	//Images watch
-	gulp.watch([CONFIG.PATH_ADMIN.IMAGES.SPRITE + '*.png'], ['styles']);
+	gulp.watch([CONFIG.PATH_ADMIN.IMAGES.SPRITE + '*.png'], ['styles-admin']);
 
 	//Scripts watch
-	gulp.watch(CONFIG.PATH_ADMIN.SCRIPTS.SRC + '**/*', ['scripts-minify']);
+	gulp.watch(CONFIG.PATH_ADMIN.SCRIPTS.SRC + '**/*', ['scripts-minify-admin']);
 });
 
 // Task utilizada para chamar o watch
